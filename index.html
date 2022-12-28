@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		h3{
+			text-align: center;
+		}
+		#form1{
+			position: absolute;
+			left: 375px;
+			text-align: center;
+			background-color: lightblue;
+			width: 550px;
+		}
+		
+	</style>
+</head>
+<body>
+	<form id="form1">
+		<h3>Input Data
+		<p>
+		<div><input id="data" type="text" size="50">
+		<p><input id="button1" type="button" value="OK" class="input_box">
+			<input type="Reset" id="clear1" value="Cancel">
+	</form>
+	<div>
+		<form>
+		<h3>Input a char to search
+		<p>
+		<div><input id="char" type="text" size="50">
+		<p><input id="button2" type="button" value="OK" onclick="search()" class="input_box">
+			<input type="Reset" id="clear1" value="Cancel">	
+		<p>Result =<span id="result"></span>		
+	</form>
+	
+
+</body>
+
+<script type="text/javascript">
+	
+
+	function search(){
+		var text="";
+		var char="";
+		var finalresult="";
+		char = document.getElementById('char').value;
+		text = document.getElementById('data').value;
+		for(var i =0;i<text.length;++i){
+			if(text.charAt(i)==char){
+				finalresult=finalresult+" "+i;
+			}
+		}
+		if(finalresult==""){
+			document.getElementById('result').innerHTML = " 404 not found";
+		}else{
+			document.getElementById('result').innerHTML = finalresult;
+		}
+	}
+</script>
+</html>
